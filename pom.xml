@@ -13,6 +13,42 @@
         <karate.version>0.9.2</karate.version>
         <serenity.version>2.0.48</serenity.version>
     </properties>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>maven-central</id>-->
+<!--            <url>http://repo1.maven.org/maven2</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>gitlab-maven</id>-->
+<!--            <url>https://gitlab.com/api/v4/projects/9266897/packages/maven</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>gitlab-maven</id>-->
+<!--            <url>https://gitlab.com/api/v4/projects/9266897/packages/maven</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>gitlab-maven</id>-->
+<!--            <url>https://gitlab.com/api/v4/projects/9266897/packages/maven</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>gitlab-com</id>
+            <url>https://gitlab.com/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+        </snapshotRepository>
+        <repository>
+            <id>gitlab-com</id>
+            <url>https://gitlab.com/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+        </repository>
+    </distributionManagement>
+    <scm>
+        <connection>scm:git:${env.CI_REPOSITORY_URL}</connection>
+        <url>${env.CI_PROJECT_URL}</url>
+        <developerConnection>scm:git:${env.CI_REPOSITORY_URL}</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencies>
         <dependency>

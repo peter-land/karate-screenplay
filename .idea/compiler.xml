@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="karate-wrapper" target="1.5" />
+      <module name="karate-wrapper" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
