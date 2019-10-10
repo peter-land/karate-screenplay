@@ -6,8 +6,8 @@ Feature: import project
     * def projectId = (typeof projectId !== 'undefined' ? projectId : '<ProjectId>')
     * def baseUrl = (typeof baseUrl !== 'undefined' ? baseUrl : castlemockApiBaseUrl)
 
-    Given call read('classpath:co/bocc/occiauto/qa/api/model/karate/castlemock/controllers/core/project/delete/delete_project/delete_project.feature') { baseUrl: '#(baseUrl)', type: '#(type)', projectId: '#(projectId)' }
-    When call read('classpath:co/bocc/occiauto/qa/api/model/karate/castlemock/controllers/core/project/post/post_project_import/post_project_import.feature') { baseUrl: '#(baseUrl)', type: '#(type)', file: '#(file)'}
+    Given call read('classpath:com/peterland/karate/api/model/templates/app/castlemock/controllers/core/project/delete/delete_project/delete_project.feature') { baseUrl: '#(baseUrl)', type: '#(type)', projectId: '#(projectId)' }
+    When call read('classpath:com/peterland/karate/api/model/templates/app/castlemock/controllers/core/project/post/post_project_import/post_project_import.feature') { baseUrl: '#(baseUrl)', type: '#(type)', file: '#(file)'}
 
     Examples:
       | Type | ProjectId | File                                         |
